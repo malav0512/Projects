@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <title>SignUp Page</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-box">
+        <h1 id="title">Sign Up</h1>
+        <form>
+          <div class="input-group">
+            <div class="input-field" id="name_field">
+              <i class="bx bxs-user"></i>
+              <input type="text" placeholder="Name" />
+            </div>
+            <div class="input-field">
+              <i class="bx bxs-envelope"></i>
+              <input type="email" placeholder="Email" />
+            </div>
+            <div class="input-field">
+              <i class="bx bxs-lock-alt"></i>
+              <input type="password" placeholder="Password" />
+            </div>
+            <p>Lost password <a href="">Click Here!</a></p>
+          </div>
+          <div class="btn-field">
+            <button type="button" id="SignUpBtn">SignUp</button>
+            <button type="button" id="SignInBtn" class="disable">SignIn</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      let SignUpBtn = document.getElementById("SignUpBtn");
+      let SignIpBtn = document.getElementById("SignIpBtn");
+      let name_field = document.getElementById("name_field");
+      let title = document.getElementById("title");
+
+      SignInBtn.onclick = function () {
+        name_field.style.maxHeight = "0";
+        title.innerHTML = "Sign In";
+        SignUpBtn.classList.add("disable");
+        SignInBtn.classList.remove("disable");
+      };
+
+      SignUpBtn.onclick = function () {
+        name_field.style.maxHeight = "60px";
+        title.innerHTML = "Sign Up";
+        SignUpBtn.classList.remove("disable");
+        SignInBtn.classList.add("disable");
+      };
+    </script>
+  </body>
+</html>
